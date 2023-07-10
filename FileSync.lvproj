@@ -11,6 +11,8 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="App - FileSync.vi" Type="VI" URL="../App - FileSync.vi"/>
+		<Item Name="FileSync -- Base.lvlib" Type="Library" URL="../Base/FileSync -- Base.lvlib"/>
+		<Item Name="FileSync -- FTP.lvlib" Type="Library" URL="../FTP/FileSync -- FTP.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="1D Array to String__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/string/string.llb/1D Array to String__ogtk.vi"/>
@@ -328,8 +330,6 @@
 				<Item Name="Unset Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Unset Busy.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
-			<Item Name="FileSync -- Base.lvlib" Type="Library" URL="../Base/FileSync -- Base.lvlib"/>
-			<Item Name="FileSync -- FTP.lvlib" Type="Library" URL="../FTP/FileSync -- FTP.lvlib"/>
 			<Item Name="FTP.lvlib" Type="Library" URL="../FTP/_support/FTP Toolkit/FTP.lvlib"/>
 			<Item Name="System" Type="VI" URL="System">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
