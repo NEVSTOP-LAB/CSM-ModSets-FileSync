@@ -10,7 +10,8 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="App - FileSync.vi" Type="VI" URL="../App - FileSync.vi"/>
+		<Item Name="App - FileSync Example.vi" Type="VI" URL="../App - FileSync Example.vi"/>
+		<Item Name="application.ini" Type="Document" URL="../application.ini"/>
 		<Item Name="FileSync -- Base.lvlib" Type="Library" URL="../Base/FileSync -- Base.lvlib"/>
 		<Item Name="FileSync -- FTP.lvlib" Type="Library" URL="../FTP/FileSync -- FTP.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
