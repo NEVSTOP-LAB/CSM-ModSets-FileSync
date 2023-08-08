@@ -17,6 +17,7 @@
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="1D Array to String__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/string/string.llb/1D Array to String__ogtk.vi"/>
+				<Item Name="Add State(s) to Queue++.vi" Type="VI" URL="/&lt;userlib&gt;/_NEVSTOP/JKI State Machine ++/Add State(s) to Queue++.vi"/>
 				<Item Name="Array of VData to VArray__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Array of VData to VArray__ogtk.vi"/>
 				<Item Name="Array of VData to VCluster__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Array of VData to VCluster__ogtk.vi"/>
 				<Item Name="Array Size(s)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Array Size(s)__ogtk.vi"/>
@@ -135,9 +136,11 @@
 				<Item Name="Get Variant Attributes__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Get Variant Attributes__ogtk.vi"/>
 				<Item Name="Get Waveform Type Enum from Data__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Get Waveform Type Enum from Data__ogtk.vi"/>
 				<Item Name="Get Waveform Type Enum from TD__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Get Waveform Type Enum from TD__ogtk.vi"/>
-				<Item Name="JKI-State-Machine-Plus.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/JKI State Machine ++/JKI-State-Machine-Plus.lvlib"/>
+				<Item Name="JKISM++ Post Message.vi" Type="VI" URL="/&lt;userlib&gt;/_NEVSTOP/JKI State Machine ++/AdvanceAPI/JKISM++ Post Message.vi"/>
+				<Item Name="JKISM++ Send Message and Wait for Reply.vi" Type="VI" URL="/&lt;userlib&gt;/_NEVSTOP/JKI State Machine ++/AdvanceAPI/JKISM++ Send Message and Wait for Reply.vi"/>
 				<Item Name="MGI Wrap String to Pixel Width.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Picture &amp; Image/MGI Wrap String to Pixel Width.vi"/>
 				<Item Name="MGI Wrap Word to Pixel Width.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Picture &amp; Image/MGI Wrap Word to Pixel Width.vi"/>
+				<Item Name="Parse State Queue++.vi" Type="VI" URL="/&lt;userlib&gt;/_NEVSTOP/JKI State Machine ++/Parse State Queue++.vi"/>
 				<Item Name="Parse String with TDs__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/lvdata/lvdata.llb/Parse String with TDs__ogtk.vi"/>
 				<Item Name="Read Key (Variant)__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/variantconfig/variantconfig.llb/Read Key (Variant)__ogtk.vi"/>
 				<Item Name="Read Section Cluster__ogtk.vi" Type="VI" URL="/&lt;userlib&gt;/_OpenG.lib/variantconfig/variantconfig.llb/Read Section Cluster__ogtk.vi"/>
