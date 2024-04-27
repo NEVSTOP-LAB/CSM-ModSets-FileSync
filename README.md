@@ -1,6 +1,6 @@
-# JKISM-FileSync    
+# CSM-FileSync    
 
-基于 JKISM+ 的文件同步模块
+基于 Communicable-State-Machine(CSM) 的文件同步模块
 
 External API:
 
