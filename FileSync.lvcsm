@@ -76,8 +76,8 @@ Item 29 = "FileSyncRountine: Move File to Backup Folder"
 Item 30 = "FileSyncRountine: Remove Empty Container Folder"
 
 [CSM Debug Console]
-Response Timeout(s) = 30
-History Length = 50
-Periodic Enable = TRUE
-Periodic threashold(#/s) = 0.500000
-Periodic Check Peroid(s) = 3.000000
+Response Timeout(s) = 30    
+History Length = 50    
+Periodic Enable = TRUE    
+Periodic threashold(#/s) = 0.500000    
+Periodic Check Peroid(s) = 3.000000    
