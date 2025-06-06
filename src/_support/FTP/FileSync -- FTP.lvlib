@@ -4,6 +4,5 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">536903680</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
-	<Item Name="FTPConfig.lvclass" Type="LVClass" URL="../FTPConfig/FTPConfig.lvclass"/>
 	<Item Name="FTPProtocol.lvclass" Type="LVClass" URL="../FTPProtocol/FTPProtocol.lvclass"/>
 </Library>

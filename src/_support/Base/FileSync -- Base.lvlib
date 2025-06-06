@@ -10,10 +10,6 @@
 	</Item>
 	<Item Name="Classes" Type="Folder">
 		<Item Name="Protocol.lvclass" Type="LVClass" URL="../Protocol/Protocol.lvclass"/>
-		<Item Name="ProtocolConfig.lvclass" Type="LVClass" URL="../ProtocolConfig/ProtocolConfig.lvclass"/>
-	</Item>
-	<Item Name="Global" Type="Folder">
-		<Item Name="Global - FileSync.vi" Type="VI" URL="../Global - FileSync.vi"/>
 	</Item>
 	<Item Name="Typedef" Type="Folder">
 		<Item Name="Def-FileSyncConfig.ctl" Type="VI" URL="../Def-FileSyncConfig.ctl"/>

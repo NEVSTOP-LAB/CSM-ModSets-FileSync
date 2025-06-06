@@ -35,3 +35,49 @@ Item 29 = "FileSyncRountine: Remove Empty Container Folder"
 
 [CSMStatus.FileSync -- Base.lvlib:FileSyncLoop.vi]
 Item 0 = "FileSyncRountine: Upload@FileSyncRountine: Pick Uploading File"
+
+[CSMModule.FileSync]
+VIName = "CSM-FileSync.vi"
+
+[CSMVI.CSM-FileSync.vi]
+Path = "<AppDir>/src/CSM-FileSync.vi"
+
+[CSMStates.CSM-FileSync.vi]
+Item 0 = "Idle"
+Item 1 = "Timeout"
+Item 2 = "Initialize Core Data"
+Item 3 = "Error Handler"
+Item 4 = "VI Reference"
+Item 5 = "Exit"
+Item 6 = "Data: Initialize"
+Item 7 = "Data: Load Configuration"
+Item 8 = "Data: Save Configuration"
+Item 9 = "Data: Cleanup"
+Item 10 = "UI: Initialize"
+Item 11 = "UI: Cursor Set"
+Item 12 = "UI: Front Panel State"
+Item 13 = "UI: Update"
+Item 14 = "Macro: Initialize"
+Item 15 = "Macro: FileSync Protocol Connect"
+Item 16 = "Macro: Check Is Still Alive"
+Item 17 = "Macro: FileSync Routines"
+Item 18 = "Macro: FileSync Protocol Disconnect"
+Item 19 = "Macro: Exit"
+Item 20 = "FileSync: Load Configuration"
+Item 21 = "FileSync: Try to Connect"
+Item 22 = "FileSync: Check Connection is Still Alive"
+Item 23 = "FileSync: Close Connection"
+Item 24 = "FileSync: Cleanup Protocol"
+Item 25 = "FileSyncRountine: Create Dir if Not Exist"
+Item 26 = "FileSyncRountine: List Files"
+Item 27 = "FileSyncRountine: Pick Uploading File"
+Item 28 = "FileSyncRountine: Upload"
+Item 29 = "FileSyncRountine: Move File to Backup Folder"
+Item 30 = "FileSyncRountine: Remove Empty Container Folder"
+
+[CSM Debug Console]
+Response Timeout(s) = 30
+History Length = 50
+Periodic Enable = TRUE
+Periodic threashold(#/s) = 0.500000
+Periodic Check Peroid(s) = 3.000000
