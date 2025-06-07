@@ -4,14 +4,5 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">536903680</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
-	<Item Name="_support" Type="Folder">
-		<Item Name="JKI Parse State Queue with StateInfo.vi" Type="VI" URL="../_support/JKI Parse State Queue with StateInfo.vi"/>
-		<Item Name="Prepare Status Table.vi" Type="VI" URL="../_support/Prepare Status Table.vi"/>
-	</Item>
-	<Item Name="Classes" Type="Folder">
-		<Item Name="Protocol.lvclass" Type="LVClass" URL="../Protocol/Protocol.lvclass"/>
-	</Item>
-	<Item Name="Typedef" Type="Folder">
-		<Item Name="Def-FileSyncConfig.ctl" Type="VI" URL="../Def-FileSyncConfig.ctl"/>
-	</Item>
+	<Item Name="Protocol.lvclass" Type="LVClass" URL="../Protocol/Protocol.lvclass"/>
 </Library>

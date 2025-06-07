@@ -56,7 +56,7 @@ Item 9 = "Data: Cleanup"
 Item 10 = "UI: Initialize"
 Item 11 = "UI: Cursor Set"
 Item 12 = "UI: Front Panel State"
-Item 13 = "UI: Update"
+Item 13 = "UI: Publish Status"
 Item 14 = "Macro: Initialize"
 Item 15 = "Macro: FileSync Protocol Connect"
 Item 16 = "Macro: Check Is Still Alive"
@@ -83,4 +83,43 @@ History Length = 50
 Periodic Enable = TRUE    
 Periodic threashold(#/s) = 0.500000    
 Periodic Check Peroid(s) = 3.000000    
-History 0 = "API: Start -@ FileSync"
+History 0 = "API: Stop -@ FileSync"
+History 1 = "API: Start -@ FileSync"
+
+[CSMStatus.CSM-FileSync.vi]
+Item 0 = "Uploading List Change@UI: Publish Status"
+Item 1 = "Status Change@UI: Publish Status"
+Item 2 = "FileSyncRountine: Upload@FileSyncRountine: Pick Uploading File"
+
+[CSMVI.CSM-FileSyncWindow.vi]
+Path = "<AppDir>/src/CSM-FileSyncWindow.vi"
+
+[CSMStates.CSM-FileSyncWindow.vi]
+Item 0 = "Event Structure"
+Item 1 = "Idle"
+Item 2 = "CSM Documentation"
+Item 3 = "VI Reference"
+Item 4 = "Error Handler"
+Item 5 = "Critical Error"
+Item 6 = "Target Timeout Error"
+Item 7 = "Target Error"
+Item 8 = "Async Response"
+Item 9 = "Response"
+Item 10 = "Async Message Posted"
+Item 11 = "Initialize Core Data"
+Item 12 = "Exit"
+Item 13 = "Data: Initialize"
+Item 14 = "Data: Cleanup"
+Item 15 = "Events: Register"
+Item 16 = "Events: Unregister"
+Item 17 = "UI: Initialize"
+Item 18 = "UI: Cursor Set"
+Item 19 = "UI: Front Panel State"
+Item 20 = "Macro: Initialize"
+Item 21 = "Macro: Exit"
+Item 22 = "API: Update List"
+Item 23 = "API: Update Connected Status"
+Item 24 = "API: Update Statusbar"
+
+[CSMModule.FileSyncWnd]
+VIName = "CSM-FileSyncWindow.vi"
