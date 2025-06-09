@@ -5,11 +5,12 @@
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Item Name="ExternalAPI" Type="Folder">
+		<Property Name="NI.SortType" Type="Int">3</Property>
+		<Item Name="Config LocalSync.vi" Type="VI" URL="../ExternalAPI/Config LocalSync.vi"/>
+		<Item Name="Config FTPSync.vi" Type="VI" URL="../ExternalAPI/Config FTPSync.vi"/>
 		<Item Name="Exit Module.vi" Type="VI" URL="../ExternalAPI/Exit Module.vi"/>
 		<Item Name="Link UI.vi" Type="VI" URL="../ExternalAPI/Link UI.vi"/>
 	</Item>
-	<Item Name="Module" Type="Folder">
-		<Item Name="CSM-FileSync.vi" Type="VI" URL="../CSM-FileSync.vi"/>
-		<Item Name="CSM-FileSyncWindow.vi" Type="VI" URL="../CSM-FileSyncWindow.vi"/>
-	</Item>
+	<Item Name="CSM-FileSync.vi" Type="VI" URL="../CSM-FileSync.vi"/>
+	<Item Name="CSM-FileSyncWindow.vi" Type="VI" URL="../CSM-FileSyncWindow.vi"/>
 </Library>

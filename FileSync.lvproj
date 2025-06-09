@@ -125,7 +125,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{5710C2B7-F67F-47D0-B56B-3594DF110073}</Property>
-				<Property Name="Bld_version.build" Type="Int">1</Property>
+				<Property Name="Bld_version.build" Type="Int">3</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">CSM-FileSync.lvlibp</Property>
 				<Property Name="Destination[0].path" Type="Path">../_build/CSM-FileSync.lvlibp</Property>
