@@ -12,8 +12,16 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="src" Type="Folder" URL="../src">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
+		<Item Name="src" Type="Folder">
+			<Item Name="_example" Type="Folder">
+				<Item Name="App - FileSync Example.vi" Type="VI" URL="../src/_example/App - FileSync Example.vi"/>
+			</Item>
+			<Item Name="Prootocol" Type="Folder">
+				<Item Name="FileSync -- Base.lvlib" Type="Library" URL="../src/_fileSync_Support/Base/FileSync -- Base.lvlib"/>
+				<Item Name="FileSync -- FTP.lvlib" Type="Library" URL="../src/_fileSync_Support/FTP/FileSync -- FTP.lvlib"/>
+				<Item Name="Prepare Status Table.vi" Type="VI" URL="../src/_fileSyncWnd_Support/Prepare Status Table.vi"/>
+			</Item>
+			<Item Name="CSM-FileSync.lvlib" Type="Library" URL="../src/CSM-FileSync.lvlib"/>
 		</Item>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
@@ -109,6 +117,7 @@
 				<Item Name="UTC Offsets -- enum.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Open Source Project/Epoch Date &amp; Time/UTC Offsets -- enum.ctl"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="FTP.lvlib" Type="Library" URL="../src/_fileSync_Support/FTP/_support/FTP Toolkit/FTP.lvlib"/>
 			<Item Name="System" Type="VI" URL="System">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -124,7 +133,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{5710C2B7-F67F-47D0-B56B-3594DF110073}</Property>
-				<Property Name="Bld_version.build" Type="Int">3</Property>
+				<Property Name="Bld_version.build" Type="Int">4</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">CSM-FileSync.lvlibp</Property>
 				<Property Name="Destination[0].path" Type="Path">../_build/CSM-FileSync.lvlibp</Property>
