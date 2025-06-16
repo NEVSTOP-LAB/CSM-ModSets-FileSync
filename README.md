@@ -2,7 +2,7 @@
 
 ## 模块功能及设计
 
-基于 Communicable-State-Machine(CSM) 的文件同步模块。CSM FileSync 模块用于将本地的数据文件备份到网络服务器中。目前支持 文件拷贝(针对NAS)/FTP协议，其他协议可以继承 Protocol.lvclass 实现拓展。
+基于 Communicable-State-Machine(CSM) 的文件同步模块。CSM FileSync 模块用于将本地的数据文件备份到网络服务器中。目前支持 `文件拷贝(针对NAS)`/`FTP协议`，其他协议可以继承 Protocol.lvclass 实现拓展。
 
 **其他特点**：
 
