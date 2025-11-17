@@ -4,6 +4,11 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">536903680</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Property Name="NI.SortType" Type="Int">3</Property>
+	<Item Name="Support" Type="Folder">
+		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
+		<Item Name="Prepare Status Table.vi" Type="VI" URL="../_fileSyncWnd_Support/Prepare Status Table.vi"/>
+	</Item>
 	<Item Name="ExternalAPI" Type="Folder">
 		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Item Name="Config LocalSync.vi" Type="VI" URL="../ExternalAPI/Config LocalSync.vi"/>
