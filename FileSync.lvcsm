@@ -69,6 +69,7 @@ Item 21 = "Macro: Exit"
 Item 22 = "API: Update List"
 Item 23 = "API: Update Connected Status"
 Item 24 = "API: Update Statusbar"
+Item 25 = "API: Link to Sync Engine"
 
 [CSMStatus.CSM-FileSync.lvlib:CSM-FileSyncWindow.vi]
 Item 0 = "Error Occurred@Error Handler"
