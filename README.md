@@ -13,6 +13,73 @@
 
 ![CSM FileSync Module](_doc/CSM%20FileSync%20Module.png)
 
+## FileSync 模块接口
+
+### API
+
+| API | 描述 | 参数 | 响应 |
+| --- | --- | --- | --- |
+| `API: Start` | 启动文件同步服务，开始监控源文件夹并上传文件到服务器。 | N/A | N/A |
+| `API: Stop` | 停止文件同步服务。 | N/A | N/A |
+
+### 状态 (Status)
+
+| Status | 描述 | 参数 |
+| --- | --- | --- |
+| `Status Change` | 同步引擎连接状态发生变化时广播。 | 状态描述字符串 |
+| `Uploading List Change` | 待上传文件队列发生变化时广播。 | 待上传文件列表 |
+
+### 配置 (Configuration)
+
+可以通过 `CSM-FileSync.lvlib` 中的 External API VI 进行配置：
+
+| External API VI | 描述 |
+| --- | --- |
+| `Config FTPSync.vi` | 配置 FTP 协议同步参数（服务器地址、账号、端口、源路径、目标路径等）。 |
+| `Config LocalSync.vi` | 配置本地文件拷贝/NAS 协议同步参数（源路径、目标路径等）。 |
+| `Link UI.vi` | 将 FileSyncWindow 界面模块链接到 FileSync 同步引擎。 |
+| `Exit Module.vi` | 退出 FileSync 模块。 |
+
+**示例：（假设模块名称为 "FileSync"）**
+
+```csm
+API: Start -> FileSync
+API: Stop -> FileSync
+```
+
+## FileSyncWindow 模块接口
+
+FileSyncWindow 是 FileSync 的可选 UI 模块，用于展示文件同步的实时状态。
+
+### API
+
+| API | 描述 | 参数 | 响应 |
+| --- | --- | --- | --- |
+| `API: Link to Sync Engine` | 将 FileSyncWindow 链接到指定的 FileSync 引擎，建立状态订阅关系。 | FileSync 模块名称 <br/> (类型: 普通字符串) | N/A |
+| `API: Update List` | 更新界面中的待上传文件列表显示。 | 待上传文件列表 | N/A |
+| `API: Update Connected Status` | 更新界面中的服务器连接状态显示。 | 状态描述字符串 | N/A |
+| `API: Update Statusbar` | 更新界面底部状态栏信息。 | 状态栏文本 | N/A |
+
+## FileSync 与 FileSyncWindow 的关系
+
+FileSync 和 FileSyncWindow 是两个独立的 CSM 模块，采用松耦合设计：
+
+- **FileSync** 是文件同步的后台引擎，负责实际的文件监控、队列管理和上传操作，可以在无 UI 的情况下独立运行。
+- **FileSyncWindow** 是可选的 UI 展示模块，用于将 FileSync 的工作状态以界面形式呈现给用户。
+
+两者通过 CSM 的状态订阅机制连接：调用 `Link UI.vi`（或 `API: Link to Sync Engine`）后，FileSyncWindow 会自动订阅 FileSync 发布的 `Status Change` 和 `Uploading List Change` 状态，并实时更新界面显示。
+
+```mermaid
+graph LR
+    FileSync[FileSync<br/>同步引擎]
+    FileSyncWindow[FileSyncWindow<br/>UI 界面]
+
+    FileSync -->|Status Change<br/>状态订阅| FileSyncWindow
+    FileSync -->|Uploading List Change<br/>状态订阅| FileSyncWindow
+```
+
+这种设计使得 FileSync 可以在不依赖任何 UI 的情况下嵌入其他应用，而 FileSyncWindow 只需通过一次 `Link UI` 调用即可接入任意 FileSync 实例。
+
 ## 下载使用
 
 - 开发版本： LabVIEW 2020
