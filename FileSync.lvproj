@@ -12,16 +12,10 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="src" Type="Folder">
-			<Item Name="_example" Type="Folder">
-				<Item Name="App - FileSync Example.vi" Type="VI" URL="../src/_example/App - FileSync Example.vi"/>
-			</Item>
-			<Item Name="Prootocol" Type="Folder">
-				<Item Name="FileSync -- Base.lvlib" Type="Library" URL="../src/_fileSync_Support/Base/FileSync -- Base.lvlib"/>
-				<Item Name="FileSync -- FTP.lvlib" Type="Library" URL="../src/_fileSync_Support/FTP/FileSync -- FTP.lvlib"/>
-			</Item>
-			<Item Name="CSM-FileSync.lvlib" Type="Library" URL="../src/CSM-FileSync.lvlib"/>
+		<Item Name="_example" Type="Folder">
+			<Item Name="App - FileSync Example.vi" Type="VI" URL="../_example/App - FileSync Example.vi"/>
 		</Item>
+		<Item Name="CSM-FileSync.lvlib" Type="Library" URL="../CSM-FileSync.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="API String Arguments Support.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/addons/API-String-Arugments-Support/API String Arguments Support.lvlib"/>
@@ -92,7 +86,7 @@
 				<Item Name="Unset Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Unset Busy.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
-			<Item Name="FTP.lvlib" Type="Library" URL="../src/_fileSync_Support/FTP/_support/FTP Toolkit/FTP.lvlib"/>
+			<Item Name="FTP.lvlib" Type="Library" URL="../Protocol/FTP/FTP Toolkit/FTP.lvlib"/>
 			<Item Name="System" Type="VI" URL="System">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -123,7 +117,7 @@
 				<Property Name="Source[0].itemID" Type="Str">{B86FBEB9-0865-465C-ABD4-550DDD45F8FE}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/src/CSM-FileSync.lvlib</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/CSM-FileSync.lvlib</Property>
 				<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
 				<Property Name="Source[1].Library.atomicCopy" Type="Bool">true</Property>
 				<Property Name="Source[1].Library.LVLIBPtopLevel" Type="Bool">true</Property>
