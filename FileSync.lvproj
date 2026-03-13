@@ -102,7 +102,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{5710C2B7-F67F-47D0-B56B-3594DF110073}</Property>
-				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.build" Type="Int">6</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">CSM-FileSync.lvlibp</Property>
 				<Property Name="Destination[0].path" Type="Path">../_build/CSM-FileSync.lvlibp</Property>
@@ -114,7 +114,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{B86FBEB9-0865-465C-ABD4-550DDD45F8FE}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{A991D821-D546-4E3D-96A0-7546C42C6E19}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/CSM-FileSync.lvlib</Property>
