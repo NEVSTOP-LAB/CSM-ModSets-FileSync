@@ -32,6 +32,15 @@
 - (可选) 可以将同步的状态显示到 FileSyncWindow 界面
 - (拓展）如果目前的协议不能满足备份需求，仿照 FTPProtocol.lvclass, 添加新的备份协议，即可支持其他协议。欢迎有兴趣的开发者提交 PR 到该仓库扩展新的协议，如 WebDAV 等.
 
+### API: Start 执行流程
+
+```mermaid
+flowchart TD
+    A["API: Start"] --> B["FileSync: Load Configuration"]
+    B --> C["FileSync: Try to Connect"]
+    C --> D["FileSync: Status Check ->"]
+```
+
 ## 开源说明
 
 ```
