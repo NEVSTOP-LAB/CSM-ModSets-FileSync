@@ -12,16 +12,10 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="src" Type="Folder">
-			<Item Name="_example" Type="Folder">
-				<Item Name="App - FileSync Example.vi" Type="VI" URL="../src/_example/App - FileSync Example.vi"/>
-			</Item>
-			<Item Name="Prootocol" Type="Folder">
-				<Item Name="FileSync -- Base.lvlib" Type="Library" URL="../src/_fileSync_Support/Base/FileSync -- Base.lvlib"/>
-				<Item Name="FileSync -- FTP.lvlib" Type="Library" URL="../src/_fileSync_Support/FTP/FileSync -- FTP.lvlib"/>
-			</Item>
-			<Item Name="CSM-FileSync.lvlib" Type="Library" URL="../src/CSM-FileSync.lvlib"/>
+		<Item Name="_example" Type="Folder">
+			<Item Name="App - FileSync Example.vi" Type="VI" URL="../_example/App - FileSync Example.vi"/>
 		</Item>
+		<Item Name="CSM-FileSync.lvlib" Type="Library" URL="../CSM-FileSync.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="API String Arguments Support.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/addons/API-String-Arugments-Support/API String Arguments Support.lvlib"/>
@@ -33,13 +27,12 @@
 				<Item Name="CSM MassData Parameter Support.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/addons/MassData-Parameter/CSM MassData Parameter Support.lvlib"/>
 				<Item Name="CSM Shared.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/_Shared/CSM Shared.lvlib"/>
 				<Item Name="Def-MassData Status Indicator(Vertical).ctl" Type="VI" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/addons/MassData-Parameter/Utility/Def-MassData Status Indicator(Vertical).ctl"/>
-				<Item Name="Delete Elements from Array-VIM.vim" Type="VI" URL="/&lt;userlib&gt;/_Hooovahh/Array VIMs/OpenG/Delete Elements from Array-VIM.vim"/>
-				<Item Name="Enum - Order Ascending Descending.ctl" Type="VI" URL="/&lt;userlib&gt;/_Hooovahh/Array VIMs/Controls/Enum - Order Ascending Descending.ctl"/>
-				<Item Name="Filter 1D Array-VIM.vim" Type="VI" URL="/&lt;userlib&gt;/_Hooovahh/Array VIMs/OpenG/Filter 1D Array-VIM.vim"/>
+				<Item Name="Delete Elements from 1D Array_nevstop.vim" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Array/Delete Elements from 1D Array_nevstop.vim"/>
+				<Item Name="Filter 1D Array_nevstop.vim" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Array/Filter 1D Array_nevstop.vim"/>
 				<Item Name="MGI Wrap String to Pixel Width.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Picture &amp; Image/MGI Wrap String to Pixel Width.vi"/>
 				<Item Name="MGI Wrap Word to Pixel Width.vi" Type="VI" URL="/&lt;userlib&gt;/_MGI/Picture &amp; Image/MGI Wrap Word to Pixel Width.vi"/>
-				<Item Name="Sort 1D Array-VIM.vim" Type="VI" URL="/&lt;userlib&gt;/_Hooovahh/Array VIMs/OpenG/Sort 1D Array-VIM.vim"/>
-				<Item Name="Two-Way Comparison Versus Array Element No Class.vim" Type="VI" URL="/&lt;userlib&gt;/_Hooovahh/Array VIMs/Sorted Search Support/Two-Way Comparison Versus Array Element No Class.vim"/>
+				<Item Name="Remove Duplicates from 1D Array_nevstop.vim" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Array/Remove Duplicates from 1D Array_nevstop.vim"/>
+				<Item Name="Search 1D Array_nevstop.vim" Type="VI" URL="/&lt;userlib&gt;/NEVSTOP-Programming-Palette/Array/Search 1D Array_nevstop.vim"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Add State(s) to Queue__JKI_lib_State_Machine.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/State Machine/_JKI_lib_State_Machine.llb/Add State(s) to Queue__JKI_lib_State_Machine.vi"/>
@@ -93,7 +86,7 @@
 				<Item Name="Unset Busy.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/cursorutil.llb/Unset Busy.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
-			<Item Name="FTP.lvlib" Type="Library" URL="../src/_fileSync_Support/FTP/_support/FTP Toolkit/FTP.lvlib"/>
+			<Item Name="FTP.lvlib" Type="Library" URL="../Protocol/FTP/FTP Toolkit/FTP.lvlib"/>
 			<Item Name="System" Type="VI" URL="System">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -109,7 +102,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{5710C2B7-F67F-47D0-B56B-3594DF110073}</Property>
-				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.build" Type="Int">6</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">CSM-FileSync.lvlibp</Property>
 				<Property Name="Destination[0].path" Type="Path">../_build/CSM-FileSync.lvlibp</Property>
@@ -121,10 +114,10 @@
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{B86FBEB9-0865-465C-ABD4-550DDD45F8FE}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{A991D821-D546-4E3D-96A0-7546C42C6E19}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/src/CSM-FileSync.lvlib</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/CSM-FileSync.lvlib</Property>
 				<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
 				<Property Name="Source[1].Library.atomicCopy" Type="Bool">true</Property>
 				<Property Name="Source[1].Library.LVLIBPtopLevel" Type="Bool">true</Property>
