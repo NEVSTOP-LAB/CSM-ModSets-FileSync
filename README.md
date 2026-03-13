@@ -103,4 +103,4 @@ graph LR
 
 ## 开源说明
 
-本项目目前未采用标准开源许可证，具体使用限制及免责声明请参见 [LICENSE](LICENSE) 文件。
+本项目以 MIT 开源许可证（MIT License）发布，具体授权条款及免责声明请参见 [LICENSE](LICENSE) 文件。
