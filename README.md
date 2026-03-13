@@ -36,9 +36,12 @@
 
 ```mermaid
 flowchart TD
-    A["API: Start"] --> B["FileSync: Load Configuration"]
-    B --> C["FileSync: Try to Connect"]
-    C --> D["FileSync: Status Check ->"]
+    A["API: Start"] --> B
+    subgraph loop["持续运行的 Loop（大的状态轮转）"]
+        B["FileSync: Load Configuration"] --> C["FileSync: Try to Connect"]
+        C --> D["FileSync: Status Check ->"]
+        D --> B
+    end
 ```
 
 ## 开源说明
