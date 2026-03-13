@@ -106,7 +106,10 @@ graph LR
 通过 git submodule 将 CSM-FileSync 作为子模块添加到您的项目中：
 
 ```bash
-git submodule add -b <tag> https://github.com/NEVSTOP-LAB/CSM-ModSets-FileSync.git submodules/CSM-FileSync
+git submodule add -b v2026.03.13 https://github.com/NEVSTOP-LAB/CSM-ModSets-FileSync.git submodules/CSM-FileSync
+```
+
+```bash
 git submodule update --init
 ```
 
