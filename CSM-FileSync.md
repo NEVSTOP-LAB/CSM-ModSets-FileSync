@@ -4,9 +4,9 @@
 
 ## 功能简述
 
-`CSM-FileSync` 是一个基于 Communicable-State-Machine(CSM) 的文件同步模块，用于将本地的数据文件备份到网络服务器中。
+`CSM-FileSync` 是一个 CSM 模块，用于将本地的数据文件备份到网络服务器中。
 
-本模块支持 `文件拷贝(针对NAS)` 和 `FTP协议`，其他协议可以通过继承 Protocol.lvclass 实现拓展。支持本地冗余备份、监控文件夹目录结构保存到服务器、支持续传（程序再次启动后会继续未完成任务）。
+本模块是文件同步的后台引擎，持续监控本地数据文件夹，将新产生的文件按原始目录结构上传到远程服务器。支持 `文件拷贝(针对NAS)` 和 `FTP协议`，其他协议可以通过继承 Protocol.lvclass 实现拓展。未完成的任务会被持久化，程序重启后自动续传。
 
 ---
 
@@ -18,6 +18,7 @@
 | 支持的操作系统 | Windows / Linux |
 | 支持 RT | ✅ 支持 |
 | 支持 64-bit | ✅ 支持 |
+| 所属模块组 | CSM-FileSync.lvlib |
 
 ---
 
@@ -33,54 +34,20 @@
 
 ## API 接口（消息接口）
 
-### FileSync 模块
+以下是外部调用者可以发送给本模块的消息。
 
-FileSync 是文件同步的后台引擎模块。它持续监控本地数据文件夹，将新产生的文件按原始目录结构上传到远程服务器（支持 FTP 或文件拷贝/NAS 协议）。未完成的任务会被持久化，程序重启后自动续传。
-
-#### `API: Start`
+### `API: Start`
 
 启动文件同步服务，开始监控源文件夹并上传文件到服务器。
 
 - **参数**：N/A
 - **响应**：N/A
 
-#### `API: Stop`
+### `API: Stop`
 
 停止文件同步服务。
 
 - **参数**：N/A
-- **响应**：N/A
-
-### FileSyncWindow 模块
-
-FileSyncWindow 是 FileSync 的可选 UI 模块，用于展示文件同步的实时状态。
-
-#### `API: Link to Sync Engine`
-
-将 FileSyncWindow 链接到指定的 FileSync 引擎，建立状态订阅关系。
-
-- **参数**：用户自定义 — `String`：FileSync 模块名称
-- **响应**：N/A
-
-#### `API: Update List`
-
-更新界面中的待上传文件列表显示。
-
-- **参数**：用户自定义 — `String`：待上传文件列表
-- **响应**：N/A
-
-#### `API: Update Connected Status`
-
-更新界面中的服务器连接状态显示。
-
-- **参数**：用户自定义 — `String`：状态描述字符串
-- **响应**：N/A
-
-#### `API: Update Statusbar`
-
-更新界面底部状态栏信息。
-
-- **参数**：用户自定义 — `String`：状态栏文本
 - **响应**：N/A
 
 ### 参数类型说明
@@ -128,25 +95,27 @@ FileSyncWindow 是 FileSync 的可选 UI 模块，用于展示文件同步的实
 
 ## 调用限制与注意事项
 
-- [ ] FileSync 可以在无 UI 的情况下独立运行
-- [ ] FileSyncWindow 是可选的 UI 展示模块，需要通过 `API: Link to Sync Engine` 与 FileSync 建立连接
+- [ ] 本模块可以在无 UI 的情况下独立运行
 - [ ] 未完成的任务会被持久化，程序重启后自动续传
 - [ ] 支持通过继承 Protocol.lvclass 拓展其他协议（如 webDAV 等）
+- [ ] 可配合 `CSM-FileSyncWindow` 模块展示同步状态（需单独文档说明）
 
 ---
 
 ## 使用示例
 
-### FileSync 基本生命周期
+> 将 `CSM-FileSync` 替换为启动模块 VI 时实际使用的名称。
+
+### 基本生命周期
 
 ```text
 // 启动文件同步服务
-API: Start -> FileSync
+API: Start -> CSM-FileSync
 
 // ... 文件同步正在运行 ...
 
 // 停止文件同步服务
-API: Stop -> FileSync
+API: Stop -> CSM-FileSync
 ```
 
 ### 配置 FTP 同步
@@ -154,7 +123,7 @@ API: Stop -> FileSync
 使用 `Config FTPSync.vi` 配置 FTP 协议同步参数后启动服务：
 
 ```text
-API: Start -> FileSync
+API: Start -> CSM-FileSync
 ```
 
 ### 配置本地/NAS 同步
@@ -162,30 +131,28 @@ API: Start -> FileSync
 使用 `Config LocalSync.vi` 配置本地文件拷贝/NAS 协议同步参数后启动服务：
 
 ```text
-API: Start -> FileSync
+API: Start -> CSM-FileSync
 ```
 
-### FileSyncWindow 与 FileSync 联动
+### 订阅状态广播
 
 ```text
-// 将 FileSyncWindow 链接到 FileSync 引擎
-API: Link to Sync Engine >> FileSync -> FileSyncWindow
+// 将 CSM-FileSync 的状态路由到处理模块
+Status Change@CSM-FileSync >> API: OnStatusChange@[处理模块] -><register>
+Uploading List Change@CSM-FileSync >> API: OnListChange@[处理模块] -><register>
 
-// FileSync 会自动广播状态到 FileSyncWindow
-// FileSyncWindow 订阅 FileSync 的状态广播
-Status Change@FileSync >> API: Update Connected Status@FileSyncWindow -><register>
-Uploading List Change@FileSync >> API: Update List@FileSyncWindow -><register>
+// 取消订阅
+Status Change@CSM-FileSync >> API: OnStatusChange@[处理模块] -><unregister>
 ```
 
 ---
 
 ## 备注
 
-- FileSync 和 FileSyncWindow 是两个独立的 CSM 模块，采用松耦合设计
-- FileSync 是文件同步的后台引擎，可以在无 UI 的情况下独立运行
-- FileSyncWindow 是可选的 UI 展示模块，通过 CSM 的状态订阅机制与 FileSync 连接
+- 本模块是文件同步的后台引擎，可以在无 UI 的情况下独立运行
 - 支持 FTP 协议和文件拷贝/NAS 协议，可通过继承 Protocol.lvclass 拓展其他协议
 - 监控文件夹目录结构会保存到服务器，支持续传功能
+- 可配合 `CSM-FileSyncWindow` 模块（另见 `CSM-FileSyncWindow.md`）通过状态订阅机制展示同步状态
 
 ---
 
