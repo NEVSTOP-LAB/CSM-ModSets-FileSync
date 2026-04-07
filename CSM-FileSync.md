@@ -52,9 +52,9 @@
 
 ### 参数类型说明
 
-| 类型 | 说明 | 链接 |
-| --- | --- | --- |
-| 用户自定义 | 由模块自行解析的字符串，无需额外插件 | — |
+| 类型 | 说明 |
+| --- | --- |
+| 用户自定义 | 由模块自行解析的字符串，无需额外插件，具体格式参见各 API 说明 |
 
 ---
 
@@ -64,7 +64,7 @@
 
 ### `Status Change`
 
-**广播类型**：`Status`
+**默认广播类型**：`Status`
 
 同步引擎连接状态发生变化时广播。
 
@@ -72,7 +72,7 @@
 
 ### `Uploading List Change`
 
-**广播类型**：`Status`
+**默认广播类型**：`Status`
 
 待上传文件队列发生变化时广播。
 
@@ -95,10 +95,12 @@
 
 ## 调用限制与注意事项
 
-- [ ] 本模块可以在无 UI 的情况下独立运行
-- [ ] 未完成的任务会被持久化，程序重启后自动续传
-- [ ] 支持通过继承 Protocol.lvclass 拓展其他协议（如 webDAV 等）
-- [ ] 可配合 `CSM-FileSyncWindow` 模块展示同步状态（需单独文档说明）
+> [!IMPORTANT]
+>
+> - 本模块可以在无 UI 的情况下独立运行。
+> - 未完成的任务会被持久化，程序重启后自动续传。
+> - 支持通过继承 Protocol.lvclass 拓展其他协议（如 webDAV 等）。
+> - 可配合 `CSM-FileSyncWindow` 模块展示同步状态（另见 `CSM-FileSyncWindow.md`）。
 
 ---
 
@@ -108,7 +110,7 @@
 
 ### 基本生命周期
 
-```text
+```csm
 // 启动文件同步服务
 API: Start -> CSM-FileSync
 
@@ -122,7 +124,7 @@ API: Stop -> CSM-FileSync
 
 使用 `Config FTPSync.vi` 配置 FTP 协议同步参数后启动服务：
 
-```text
+```csm
 API: Start -> CSM-FileSync
 ```
 
@@ -130,13 +132,13 @@ API: Start -> CSM-FileSync
 
 使用 `Config LocalSync.vi` 配置本地文件拷贝/NAS 协议同步参数后启动服务：
 
-```text
+```csm
 API: Start -> CSM-FileSync
 ```
 
 ### 订阅状态广播
 
-```text
+```csm
 // 将 CSM-FileSync 的状态路由到处理模块
 Status Change@CSM-FileSync >> API: OnStatusChange@[处理模块] -><register>
 Uploading List Change@CSM-FileSync >> API: OnListChange@[处理模块] -><register>
@@ -156,5 +158,5 @@ Status Change@CSM-FileSync >> API: OnStatusChange@[处理模块] -><unregister>
 
 ---
 
-*完整 CSM 语法参考：<https://github.com/NEVSTOP-LAB/Communicable-State-Machine/blob/main/.doc/Syntax.md>*
-*CSM Wiki：<https://nevstop-lab.github.io/CSM-Wiki/>*
+- _完整 CSM 语法参考：<https://github.com/NEVSTOP-LAB/Communicable-State-Machine/blob/main/.doc/Syntax.md>_
+- _CSM Wiki：<https://nevstop-lab.github.io/CSM-Wiki/>_
