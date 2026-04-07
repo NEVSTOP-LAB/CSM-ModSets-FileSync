@@ -65,17 +65,25 @@
 - **参数**：用户自定义 — `String`：状态栏文本
 - **响应**：N/A
 
+### `UI: Front Panel State`
+
+控制本模块前面板的显示状态。
+
+- **参数**：`APIString` — `Enum`：`Open`、`Close` 或 `Minimize`
+- **响应**：N/A
+
+### `UI: Cursor Set`
+
+设置前面板光标样式。
+
+- **参数**：`APIString` — `Enum`：光标类型名称（如 `Busy`、`Default`）
+- **响应**：N/A
+
 ### 参数类型说明
 
-| 类型 | 说明 | 链接 |
-| --- | --- | --- |
-| 用户自定义 | 由模块自行解析的字符串，无需额外插件 | — |
-
----
-
-## 状态广播接口
-
-本模块不对外广播状态。
+| 类型 | 说明 |
+| --- | --- |
+| 用户自定义 | 由模块自行解析的字符串，无需额外插件，具体格式参见各 API 说明 |
 
 ---
 
@@ -93,10 +101,12 @@
 
 ## 调用限制与注意事项
 
-- [ ] 本模块必须与 `CSM-FileSync` 模块配合使用
-- [ ] 需要通过 `API: Link to Sync Engine` 或 `Link UI.vi` 建立与 FileSync 引擎的连接
-- [ ] 建立连接后会自动订阅 FileSync 的 `Status Change` 和 `Uploading List Change` 状态
-- [ ] 本模块为可选的 UI 展示模块，FileSync 可以在没有本模块的情况下独立运行
+> [!IMPORTANT]
+>
+> - 本模块必须与 `CSM-FileSync` 模块配合使用。
+> - 需要通过 `API: Link to Sync Engine` 或 `Link UI.vi` 建立与 FileSync 引擎的连接。
+> - 建立连接后会自动订阅 FileSync 的 `Status Change` 和 `Uploading List Change` 状态。
+> - 本模块为可选的 UI 展示模块，FileSync 可以在没有本模块的情况下独立运行。
 
 ---
 
@@ -106,7 +116,7 @@
 
 ### 基本生命周期
 
-```text
+```csm
 // 启动 FileSync 引擎
 API: Start -> CSM-FileSync
 
@@ -118,7 +128,7 @@ API: Link to Sync Engine >> CSM-FileSync -> CSM-FileSyncWindow
 
 使用 `Link UI.vi` 将 FileSyncWindow 链接到 FileSync：
 
-```text
+```csm
 // FileSync 已启动，使用 Link UI.vi 建立 UI 连接
 // Link UI.vi 会自动建立状态订阅关系
 ```
@@ -127,7 +137,7 @@ API: Link to Sync Engine >> CSM-FileSync -> CSM-FileSyncWindow
 
 如果需要手动建立状态订阅关系：
 
-```text
+```csm
 // 将 FileSync 的状态广播路由到 FileSyncWindow
 Status Change@CSM-FileSync >> API: Update Connected Status@CSM-FileSyncWindow -><register>
 Uploading List Change@CSM-FileSync >> API: Update List@CSM-FileSyncWindow -><register>
@@ -149,5 +159,5 @@ Uploading List Change@CSM-FileSync >> API: Update List@CSM-FileSyncWindow -><unr
 
 ---
 
-*完整 CSM 语法参考：<https://github.com/NEVSTOP-LAB/Communicable-State-Machine/blob/main/.doc/Syntax.md>*
-*CSM Wiki：<https://nevstop-lab.github.io/CSM-Wiki/>*
+- _完整 CSM 语法参考：<https://github.com/NEVSTOP-LAB/Communicable-State-Machine/blob/main/.doc/Syntax.md>_
+- _CSM Wiki：<https://nevstop-lab.github.io/CSM-Wiki/>_
