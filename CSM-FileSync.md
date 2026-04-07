@@ -12,23 +12,23 @@
 
 ## 模块信息
 
-| 属性 | 值 |
-| --- | --- |
-| LabVIEW 版本 | ≥ 2020 |
-| 支持的操作系统 | Windows / Linux |
-| 支持 RT | ✅ 支持 |
-| 支持 64-bit | ✅ 支持 |
-| 所属模块组 | CSM-FileSync.lvlib |
+| 属性           | 值                 |
+| -------------- | ------------------ |
+| LabVIEW 版本   | ≥ 2020             |
+| 支持的操作系统 | Windows / Linux    |
+| 支持 RT        | ✅ 支持            |
+| 支持 64-bit    | ✅ 支持            |
+| 所属模块组     | CSM-FileSync.lvlib |
 
 ---
 
 ## 依赖项
 
-| 依赖 | 类型 |
-| --- | --- |
+| 依赖                                                                                    | 类型 |
+| --------------------------------------------------------------------------------------- | ---- |
 | [Communicable-State-Machine](https://github.com/NEVSTOP-LAB/Communicable-State-Machine) | 必须 |
-| NEVTOP-Programming-Palette | 必须 |
-| MGI | 必须 |
+| NEVTOP-Programming-Palette                                                              | 必须 |
+| MGI                                                                                     | 必须 |
 
 ---
 
@@ -52,9 +52,16 @@
 
 ### 参数类型说明
 
-| 类型 | 说明 |
-| --- | --- |
-| 用户自定义 | 由模块自行解析的字符串，无需额外插件，具体格式参见各 API 说明 |
+| 类型        | 说明                                                                                              |
+| ----------- | ------------------------------------------------------------------------------------------------- |
+| `HexStr`    | 将 LabVIEW Variant 序列化为十六进制字符串，内置支持                                               |
+| `SafeStr`   | 将特殊字符编码为 `%[HEXCODE]`，内置支持                                                           |
+| `ErrStr`    | 将错误信息编码为字符串，内置支持                                                                  |
+| `APIString` | 支持嵌套键值对的纯文本字符串，需要 CSM API String Arguments Support 插件                          |
+| `MassData`  | 内存映射缓冲区，传递 `Start:N,Size:M`，需要 CSM MassData Parameter Support 插件                   |
+| 用户自定义  | 由模块自行解析的字符串，无需额外插件，但是要说明具体的解析规则和格式                              |
+
+> **注意**：接口文档中对 `String` 类型数据统一使用 `APIString` 标注（不直接写 `SafeStr`），因为 `SafeStr` 正是 `APIString` 针对 `String` 类型的内部实现。
 
 ---
 
@@ -86,10 +93,10 @@
 
 可以通过 `CSM-FileSync.lvlib` 中的 External API VI 进行配置：
 
-| External API VI | 说明 |
-| --- | --- |
-| `Config FTPSync.vi` | 配置 FTP 协议同步参数（服务器地址、账号、端口、源路径、目标路径等） |
-| `Config LocalSync.vi` | 配置本地文件拷贝/NAS 协议同步参数（源路径、目标路径等） |
+| External API VI       | 说明                                                                |
+| --------------------- | ------------------------------------------------------------------- |
+| `Config FTPSync.vi`   | 配置 FTP 协议同步参数（服务器地址、账号、端口、源路径、目标路径等） |
+| `Config LocalSync.vi` | 配置本地文件拷贝/NAS 协议同步参数（源路径、目标路径等）             |
 
 ---
 

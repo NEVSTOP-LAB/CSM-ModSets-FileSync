@@ -12,24 +12,24 @@
 
 ## 模块信息
 
-| 属性 | 值 |
-| --- | --- |
-| LabVIEW 版本 | ≥ 2020 |
-| 支持的操作系统 | Windows / Linux |
-| 支持 RT | ✅ 支持 |
-| 支持 64-bit | ✅ 支持 |
-| 所属模块组 | CSM-FileSync.lvlib |
+| 属性           | 值                 |
+| -------------- | ------------------ |
+| LabVIEW 版本   | ≥ 2020             |
+| 支持的操作系统 | Windows / Linux    |
+| 支持 RT        | ✅ 支持            |
+| 支持 64-bit    | ✅ 支持            |
+| 所属模块组     | CSM-FileSync.lvlib |
 
 ---
 
 ## 依赖项
 
-| 依赖 | 类型 |
-| --- | --- |
+| 依赖                                                                                    | 类型 |
+| --------------------------------------------------------------------------------------- | ---- |
 | [Communicable-State-Machine](https://github.com/NEVSTOP-LAB/Communicable-State-Machine) | 必须 |
-| CSM-FileSync | 必须 |
-| NEVTOP-Programming-Palette | 必须 |
-| MGI | 必须 |
+| CSM-FileSync                                                                            | 必须 |
+| NEVTOP-Programming-Palette                                                              | 必须 |
+| MGI                                                                                     | 必须 |
 
 ---
 
@@ -41,28 +41,28 @@
 
 将 FileSyncWindow 链接到指定的 FileSync 引擎，建立状态订阅关系。
 
-- **参数**：用户自定义 — `String`：FileSync 模块名称
+- **参数**：`APIString`：FileSync 模块名称
 - **响应**：N/A
 
 ### `API: Update List`
 
 更新界面中的待上传文件列表显示。
 
-- **参数**：用户自定义 — `String`：待上传文件列表
+- **参数**：`APIString`：待上传文件列表
 - **响应**：N/A
 
 ### `API: Update Connected Status`
 
 更新界面中的服务器连接状态显示。
 
-- **参数**：用户自定义 — `String`：状态描述字符串
+- **参数**：`APIString`：状态描述字符串
 - **响应**：N/A
 
 ### `API: Update Statusbar`
 
 更新界面底部状态栏信息。
 
-- **参数**：用户自定义 — `String`：状态栏文本
+- **参数**：`APIString`：状态栏文本
 - **响应**：N/A
 
 ### `UI: Front Panel State`
@@ -81,9 +81,16 @@
 
 ### 参数类型说明
 
-| 类型 | 说明 |
-| --- | --- |
-| 用户自定义 | 由模块自行解析的字符串，无需额外插件，具体格式参见各 API 说明 |
+| 类型        | 说明                                                                                              |
+| ----------- | ------------------------------------------------------------------------------------------------- |
+| `HexStr`    | 将 LabVIEW Variant 序列化为十六进制字符串，内置支持                                               |
+| `SafeStr`   | 将特殊字符编码为 `%[HEXCODE]`，内置支持                                                           |
+| `ErrStr`    | 将错误信息编码为字符串，内置支持                                                                  |
+| `APIString` | 支持嵌套键值对的纯文本字符串，需要 CSM API String Arguments Support 插件                          |
+| `MassData`  | 内存映射缓冲区，传递 `Start:N,Size:M`，需要 CSM MassData Parameter Support 插件                   |
+| 用户自定义  | 由模块自行解析的字符串，无需额外插件，但是要说明具体的解析规则和格式                              |
+
+> **注意**：接口文档中对 `String` 类型数据统一使用 `APIString` 标注（不直接写 `SafeStr`），因为 `SafeStr` 正是 `APIString` 针对 `String` 类型的内部实现。
 
 ---
 
@@ -93,9 +100,9 @@
 
 可以通过 `CSM-FileSync.lvlib` 中的 External API VI 进行配置：
 
-| External API VI | 说明 |
-| --- | --- |
-| `Link UI.vi` | 将 FileSyncWindow 链接到 FileSync 引擎，等同于调用 `API: Link to Sync Engine` |
+| External API VI | 说明                                                                          |
+| --------------- | ----------------------------------------------------------------------------- |
+| `Link UI.vi`    | 将 FileSyncWindow 链接到 FileSync 引擎，等同于调用 `API: Link to Sync Engine` |
 
 ---
 
