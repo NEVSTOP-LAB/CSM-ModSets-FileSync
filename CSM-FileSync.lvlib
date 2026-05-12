@@ -8,6 +8,8 @@
 	<Item Name="Support" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">1</Property>
 		<Item Name="Prepare Status Table.vi" Type="VI" URL="../_support/Prepare Status Table.vi"/>
+		<Item Name="Wrap String to Pixel Width.vi" Type="VI" URL="../_support/Wrap String to Pixel Width.vi"/>
+		<Item Name="Wrap Word to Pixel Width.vi" Type="VI" URL="../_support/Wrap Word to Pixel Width.vi"/>
 	</Item>
 	<Item Name="Protocol" Type="Folder">
 		<Item Name="FTPProtocol.lvclass" Type="LVClass" URL="../Protocol/FTP/FTPProtocol.lvclass"/>
