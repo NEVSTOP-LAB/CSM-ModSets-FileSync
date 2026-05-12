@@ -27,8 +27,6 @@
 | 依赖                                                                                    | 类型 |
 | --------------------------------------------------------------------------------------- | ---- |
 | [Communicable-State-Machine](https://github.com/NEVSTOP-LAB/Communicable-State-Machine) | 必须 |
-| NEVTOP-Programming-Palette                                                              | 必须 |
-| MGI                                                                                     | 必须 |
 
 ---
 
