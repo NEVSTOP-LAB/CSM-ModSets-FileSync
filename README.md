@@ -18,8 +18,6 @@
 - 开发版本： LabVIEW 2020
 - VIPM 依赖：
   - CSM Framework v2026Q1 或以后版本
-  - NEVTOP-Programming-Palette
-  - MGI
 
 ## 模块接口文档
 
